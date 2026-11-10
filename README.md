@@ -25,6 +25,30 @@ Saved choices travel with the drive. Release builds always find `Directory` besi
 
 This first version supports Windows `.exe` tools. Script files, shortcuts, launch arguments, per-tool elevation, and additional themes are future work. To run tools requiring administrator access, run Lotus as administrator. Legacy Vista/7 is a visual reference, not a supported runtime target. Linked folders are skipped. Folder depth is limited to 32 levels.
 
+## Recommended starter tools
+
+[Microsoft Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) is Lotus Menu’s recommended starter toolkit. Download it directly from Microsoft using that page, which also links to the individual utilities.
+
+Start with these graphical tools:
+
+| Tool | Suggested category |
+| --- | --- |
+| Process Explorer | System Information |
+| Process Monitor | Diagnostics |
+| Autoruns | System Information |
+| TCPView | Network |
+| RAMMap | Diagnostics |
+
+### Adding Sysinternals tools
+
+1. Download the Suite to a staging folder outside `Directory`, or use the individual utility downloads linked from Microsoft’s Suite page.
+2. Create one folder per application in the suggested category and place its executable variants and associated files there. Keep each utility’s required supporting files and supplied license information intact.
+3. Start Lotus Menu or select **Refresh Menu**. If a utility includes several executables, choose the appropriate main executable for your Windows architecture; Lotus remembers the choice.
+
+Do not extract the entire Suite into one tool folder: Lotus currently treats a folder with executables as one application and would ask you to select just one entry point. Separate application folders give you separate menu entries.
+
+Some Sysinternals utilities require command-line arguments or administrator access. This first Lotus version is best suited to the graphical tools above; command-line profiles and per-tool elevation are future work. Lotus links to the official downloads rather than bundling the Suite. Complete any Microsoft license prompts in the tools themselves.
+
 ## Build on Windows 10/11
 
 1. Install [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) with **Desktop development with C++**, and Microsoft Edge WebView2 Runtime. See [Tauri Windows prerequisites](https://v2.tauri.app/start/prerequisites/#windows).
