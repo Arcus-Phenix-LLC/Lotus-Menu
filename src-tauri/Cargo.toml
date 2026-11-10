@@ -1,11 +1,15 @@
 [package]
 name = "lotus-menu"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
 [dependencies]
-tauri = { version = "1.5", features = ["api-all"] }
+tauri = { version = "2", features = [] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-walkdir = "2"
-csv = "1"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]

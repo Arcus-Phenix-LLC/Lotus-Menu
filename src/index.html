@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-theme="aero">
 <head>
-    <meta charset="UTF-8">
-    <title>Lotus Menu</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        button { padding: 10px 20px; font-size: 16px; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lotus Menu</title>
+  <link rel="stylesheet" href="themes/aero.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <header class="masthead"><div class="emblem" aria-hidden="true">✿</div><div><h1>Lotus Menu</h1><p>Your portable toolbox</p></div><span class="theme-label">Aero Classic</span></header>
+  <nav class="menubar" aria-label="Toolbox actions">
+    <button id="programs" aria-expanded="true" aria-controls="menus">Programs</button>
+    <button id="refresh">Refresh Menu</button>
     <button id="browse">Browse Folder</button>
-    <script src="https://unpkg.com/@tauri-apps/api@1.5.0/dist/index.umd.js"></script>
-    <script>
-        const { invoke } = window.__TAURI__.tauri;
-        document.getElementById('browse').addEventListener('click', () => {
-            invoke('open_folder', { path: 'Directory' });
-        });
-    </script>
+    <button id="about">Help</button>
+  </nav>
+  <main>
+    <div class="intro"><h2>Tools, right where you left them.</h2><p>Choose a category to open its tools.</p></div>
+    <section id="menus" aria-label="Tool categories"></section>
+    <section id="empty" hidden><h2>Your toolbox starts here.</h2><p>Open the tools folder and add your portable applications.<br>Use folders for categories, then select Refresh Menu.</p><button id="empty-browse">Open tools folder</button></section>
+    <section id="setup" hidden><h2>Choose launch files <span id="pending"></span></h2><p>These folders have more than one executable, or a saved choice needs updating.</p><div id="choices"></div></section>
+    <section id="warnings" hidden aria-label="Scan warnings"></section>
+  </main>
+  <footer><span class="status-light" aria-hidden="true"></span><span id="status" role="status" aria-live="polite">Starting Lotus Menu…</span><span class="footer-note">Portable · Scans on startup</span></footer>
+  <dialog id="help"><h2>A familiar menu. Your own tools.</h2><p>Place tools in <strong>Directory</strong> beside Lotus Menu.exe. Nested folders become categories. A folder containing an executable becomes a tool; its supporting folders stay hidden.</p><p>If several executables are found, choose the main one below the menu. Lotus saves your choice in that folder’s <strong>lotus.json</strong>.</p><p>Restart Lotus or use Refresh Menu after changing tools. This version launches Windows .exe files. Tools requiring administrator access must be started from an elevated Lotus instance.</p><p>The default theme recalls Windows Vista/7. More themes are planned.</p><form method="dialog"><button>Close</button></form></dialog>
 </body>
 </html>
