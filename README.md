@@ -60,4 +60,4 @@ Rust tests cover category discovery, ambiguous executables, persisted choices, r
 
 `src/app.js` owns interaction; `src/themes/aero.css` owns the default theme. `data-theme="aero"` identifies the current theme. Future stylesheets can reuse the markup and semantic menu behavior. There is no theme picker until additional themes exist. Mouse, Tab, Enter, and arrow keys navigate the menus. Deep menus scroll horizontally within the window.
 
-The Rust/Tauri 2 backend exposes only scan, saved-choice, launch, and browse commands. The old Python prototype (`LBM.py`) remains for reference and is not used by this application. The working source originated from `Arcus-Phenix-LLC/Lotus-Menu` main at `3a11182cf3b08e4e5ac6092046fcab83b72f83e0`.
+The Rust/Tauri 2 backend exposes only scan, saved-choice, launch, and browse commands. The Python prototype has been removed; Lotus Menu uses Rust/Tauri. The original Lotus artwork, `Lotus_boot.png`, is preserved in the repository. The working source originated from `Arcus-Phenix-LLC/Lotus-Menu` main at `3a11182cf3b08e4e5ac6092046fcab83b72f83e0`.
