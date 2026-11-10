@@ -4,6 +4,8 @@ A portable Windows toolbox with a Windows Vista/7 inspired default theme. Drop t
 
 ## Organizing tools
 
+Starter categories are included in `Directory`: **Backup and Recovery**, **Diagnostics**, **Drivers**, **File Management**, **Network**, **Security**, **Storage**, **System Information**, and **Utilities**. Add each application in its own folder inside a category. You can rename, remove, or add categories freely. Empty categories stay out of the menu until they contain a tool; `.gitkeep` files only preserve the folders in Git and are ignored by the scanner.
+
 ```text
 Lotus Menu.exe
 Directory/
